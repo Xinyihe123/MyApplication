@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
+    //API key with ninghan2@illinoie.edu
     private String APIKey = "36b1a4-a52bb5";
 
     /** Default logging tag for messages from the main activity. */
@@ -75,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
             //final String ret;
             JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
                     Request.Method.GET,
-                    "http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightNum=" + flightNumber,
+                    //"http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
+                    //"http://universities.hipolabs.com/search?name=" + flightNumber
+                    "http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber,
                     null,
                     new Response.Listener<JSONArray>() {
                         @Override
