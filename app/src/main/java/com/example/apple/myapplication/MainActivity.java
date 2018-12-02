@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText flightNumberInput;
 
-    Button submit;
+    Button submitButton;
 
     /** Request queue for our network requests. */
     private static RequestQueue requestQueue;
@@ -40,5 +40,18 @@ public class MainActivity extends AppCompatActivity {
 
         // Load the main layout for our activity
         setContentView(R.layout.activity_main);
+
+        //set user input to flightNumberInput variable
+        flightNumberInput = findViewById(R.id.flightNumberInput);
+
+        //set submit button
+        submitButton = findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flightNumber = flightNumberInput.getText().toString();
+            }
+        });
+
     }
 }
