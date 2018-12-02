@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         //Set the text view of flight departure information
         final TextView flightDepartInfo = findViewById(R.id.flightDepartInfo);
 
-        //Set the departure information bar to invisible first
-        flightDepartInfo.setVisibility(View.INVISIBLE);
         //set input to flight number variable by using a listener
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,8 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 flightNumber = flightNumberInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
                 startAPICall(flightDepartInfo);
-                //Set the departure information bar to visible
-                flightDepartInfo.setVisibility(View.VISIBLE);
             }
         });
 
