@@ -23,6 +23,8 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
+    //BEFORE CHANGE!!!!!!!!!
+
     //API key with ninghan2@illinoie.edu, 100 calls initially. (tested)
     private String APIKey = "36b1a4-a52bb5";
 
