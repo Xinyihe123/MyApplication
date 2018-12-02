@@ -22,6 +22,11 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String APIKey = "36b1a4-a52bb5";
+
+    /** Default logging tag for messages from the main activity. */
+    private static final String TAG = "Lab12:Main";
+
     String flightNumber;
 
     EditText flightNumberInput;
@@ -46,10 +51,12 @@ public class MainActivity extends AppCompatActivity {
 
         //set submit button
         submitButton = findViewById(R.id.submitButton);
+        //set input to flight number variable by using a listener
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 flightNumber = flightNumberInput.getText().toString();
+                Log.d(TAG, "Submit button clicked");
             }
         });
 
