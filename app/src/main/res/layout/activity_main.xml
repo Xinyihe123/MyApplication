@@ -13,16 +13,22 @@
         android:gravity="bottom"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
+            android:layout_gravity="top"
+            android:src="@drawable/airplane" />
+
         <TextView
             android:id="@+id/flightDepartInfo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="194dp"
             android:text="Display Flight Info" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="Enter Your Flight Number" />
 
         <EditText

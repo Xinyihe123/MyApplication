@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
             //final String ret;
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
-                    //"http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
-                    //"http://universities.hipolabs.com/search?name=" + flightNumber
+                    //"https://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
+                    //"https://universities.hipolabs.com/search?name=" + flightNumber
                     "https://universities.hipolabs.com/search?name=" + flightNumber,
                     null,
                     new Response.Listener<JSONObject>() {
