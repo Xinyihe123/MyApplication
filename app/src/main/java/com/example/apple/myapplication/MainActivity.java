@@ -22,7 +22,7 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    //API key with ninghan2@illinoie.edu
+    //API key with ninghan2@illinoie.edu, 100 calls initially. (tested)
     private String APIKey = "36b1a4-a52bb5";
 
     /** Default logging tag for messages from the main activity. */
