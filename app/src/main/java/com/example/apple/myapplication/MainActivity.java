@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             //final String ret;
             JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
                     Request.Method.GET,
-                    "https://api.iextrading.com/1.0/stock/AAPL/batch?types=quote",
+                    " http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightNum=AA2211",
                     null,
                     new Response.Listener<JSONArray>() {
                         @Override
