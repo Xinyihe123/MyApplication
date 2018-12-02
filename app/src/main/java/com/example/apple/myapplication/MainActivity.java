@@ -1,5 +1,6 @@
 package com.example.apple.myapplication;
 
+import android.security.NetworkSecurityPolicy;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -68,21 +69,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     /**
      * Make an API call.
      */
     void startAPICall(final TextView textView) {
         try {
             //final String ret;
-            JsonArrayRequest jsonObjectRequest = new JsonArrayRequest(
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
                     //"http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
                     //"http://universities.hipolabs.com/search?name=" + flightNumber
-                    "http://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber,
+                    "https://universities.hipolabs.com/search?name=" + flightNumber,
                     null,
-                    new Response.Listener<JSONArray>() {
+                    new Response.Listener<JSONObject>() {
                         @Override
-                        public void onResponse(final JSONArray response) {
+                        public void onResponse(final JSONObject response) {
                             Log.d(TAG, response.toString());
                             textView.setText(response.toString());
                         }
