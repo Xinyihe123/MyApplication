@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -20,6 +21,12 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
+
+    String flightNumber;
+
+    EditText flightNumberInput;
+
+    Button submit;
 
     /** Request queue for our network requests. */
     private static RequestQueue requestQueue;
