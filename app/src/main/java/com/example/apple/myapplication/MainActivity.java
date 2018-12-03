@@ -1,20 +1,17 @@
 package com.example.apple.myapplication;
 
-import android.security.NetworkSecurityPolicy;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -65,10 +62,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 flightNumber = flightNumberInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
-                JSONObject departure = null;
-                JSONObject arrival = null;
-                startAPICall();
-
+                //JSONObject arrival = null;
+                startAPICall(flightDepartInfo);
             }
         });
 
@@ -79,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Make an API call.
      */
-    void startAPICall() {
+    void startAPICall(final TextView flightDepartInfo) {
         try {
             //final String ret;
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
@@ -91,7 +86,20 @@ public class MainActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(final JSONObject response) {
+                            Log.d(TAG, "BEFORE THE TRY RUNS");
                             Log.d(TAG, response.toString());
+                            try {
+                                Log.d(TAG, "TRY IS RUNNING ");
+                                JSONArray arr = new JSONArray(response);
+                                //get departure info -- icaoCode
+                                JSONObject departure = arr.getJSONObject(2);
+                                String icaoCode = departure.getString("icaoCode");
+                                Log.d(TAG, icaoCode);
+                                flightDepartInfo.setText(icaoCode);
+
+                            } catch (Exception e) {
+                                Log.e("MYAPP", "unexpected JSON exception", e);
+                            }
 
                         }
                     }, new Response.ErrorListener() {
