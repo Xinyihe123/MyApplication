@@ -20,8 +20,6 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    //BEFORE CHANGE!!!!!!!!!
-
     //API key with ninghan2@illinoie.edu, 100 calls initially. (tested)
     private String APIKey = "36b1a4-a52bb5";
 
@@ -86,15 +84,12 @@ public class MainActivity extends AppCompatActivity {
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(final JSONObject response) {
-                            Log.d(TAG, "BEFORE THE TRY RUNS");
                             Log.d(TAG, response.toString());
                             try {
-                                Log.d(TAG, "TRY IS RUNNING ");
                                 JSONArray arr = new JSONArray(response);
                                 //get departure info -- icaoCode
                                 JSONObject departure = arr.getJSONObject(2);
                                 String icaoCode = departure.getString("icaoCode");
-                                Log.d(TAG, icaoCode);
                                 flightDepartInfo.setText(icaoCode);
 
                             } catch (Exception e) {
