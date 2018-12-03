@@ -65,7 +65,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 flightNumber = flightNumberInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
-                startAPICall(flightDepartInfo);
+                JSONObject departure = null;
+                JSONObject arrival = null;
+                startAPICall();
+
             }
         });
 
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Make an API call.
      */
-    void startAPICall(final TextView textView) {
+    void startAPICall() {
         try {
             //final String ret;
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
@@ -89,7 +92,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onResponse(final JSONObject response) {
                             Log.d(TAG, response.toString());
-                            textView.setText(response.toString());
                         }
                     }, new Response.ErrorListener() {
                 @Override
