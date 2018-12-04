@@ -119,6 +119,7 @@ public class SearchMenu extends AppCompatActivity {
         returnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
             }
         });
     }
