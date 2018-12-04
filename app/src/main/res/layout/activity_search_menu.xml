@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SearchMenu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/returnHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back to Home Page" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="191dp"
+            android:layout_gravity="top"
+            android:src="@drawable/airplane"
+            android:layout_marginVertical="20dp"/>
+
+        <TextView
+            android:id="@+id/flightDepartInfo"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:text="Display Flight Info" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Enter Your Flight Number" />
+
+        <EditText
+            android:id="@+id/flightNumberInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Flight Number (e.x. CA213)"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="7dp"
+            android:text="Submit" />
+    </LinearLayout>
+
+</LinearLayout>
