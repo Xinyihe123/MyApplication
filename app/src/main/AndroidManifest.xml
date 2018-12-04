@@ -25,7 +25,9 @@
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
 
-        <activity android:name=".SearchMenu"></activity>
+        <activity android:name=".SearchMenu" />
+        <activity android:name=".SearchAircraft" />
+        <activity android:name=".SearchGeography"></activity>
     </application>
 
 </manifest>

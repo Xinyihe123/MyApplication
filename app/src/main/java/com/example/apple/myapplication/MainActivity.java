@@ -31,9 +31,19 @@ public class MainActivity extends AppCompatActivity {
         // Load the main layout for our activity
         setContentView(R.layout.activity_main);
 
+        //Configure the button for search departure and arrival
         configureSearchDepartArr();
+
+        //configure the button for search aircraft information
+        configureSearchAircraft();
+
+        //configure the button for search geography information
+        configureGeographyInfo();
     }
 
+    /**
+     * A method that configures the button linked search departure and arrival information
+     */
     private void configureSearchDepartArr() {
         Button searchDepartArriv = findViewById(R.id.searchDeparetureArrival);
         searchDepartArriv.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +53,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     * A method that configures the button linked to search aircraft information
+     */
+    private void configureSearchAircraft() {
+        Button searchAircraft = findViewById(R.id.searchAircraft);
+        searchAircraft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SearchAircraft.class));
+            }
+        });
+    }
+
+    /**
+     * A method that configures the button linked to search geography information
+     */
+    private void configureGeographyInfo() {
+        Button searchGeography = findViewById(R.id.searchGeography);
+        searchGeography.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SearchGeography.class));
+            }
+        });
+    }
+
 
 
 
