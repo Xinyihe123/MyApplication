@@ -10,27 +10,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg2"
         android:gravity="bottom"
-        android:orientation="vertical"
-        android:background="@drawable/bg2">
+        android:orientation="vertical">
+
 
         <Button
             android:id="@+id/returnHome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back to Home Page" />
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Back"
+            android:background="@drawable/rounded_button"
+            android:bottomRightRadius="20dp" />
 
         <TextView
             android:id="@+id/flightDepartInfo"
             android:layout_width="match_parent"
-            android:layout_height="194dp"
-            android:text="Display Flight Info" />
+            android:layout_height="455dp"
+            android:layout_marginTop="10dp"
+            android:text="Display departure/arrival Info" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:text="Enter Your Flight Number" />
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Enter Your Flight Number"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/flightNumberInput"
@@ -38,12 +47,14 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Flight Number (e.x. CA213)"
-            android:inputType="textPersonName" />
+            android:textColorHint="#8b8989"
+            android:inputType="textPersonName"
+            android:textColor="#f0ffff"/>
 
         <Button
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="Submit" />
     </LinearLayout>
 

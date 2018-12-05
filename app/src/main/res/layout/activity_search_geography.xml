@@ -48,7 +48,8 @@
             android:ems="10"
             android:hint="Flight Number (e.x. CA213)"
             android:textColorHint="#8b8989"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#f0ffff"/>
 
         <Button
             android:id="@+id/submitButton"
