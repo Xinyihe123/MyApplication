@@ -23,7 +23,7 @@
         <TextView
             android:id="@+id/geographyInfo"
             android:layout_width="match_parent"
-            android:layout_height="194dp"
+            android:layout_height="329dp"
             android:text="Display Geography Info" />
 
         <TextView
