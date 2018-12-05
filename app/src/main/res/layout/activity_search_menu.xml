@@ -11,20 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bg2">
 
         <Button
             android:id="@+id/returnHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Back to Home Page" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="191dp"
-            android:layout_gravity="top"
-            android:src="@drawable/departure"
-            android:layout_marginVertical="20dp"/>
 
         <TextView
             android:id="@+id/flightDepartInfo"
