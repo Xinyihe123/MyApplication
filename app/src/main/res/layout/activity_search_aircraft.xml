@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/aircraftbackground">
+
 
         <Button
             android:id="@+id/returnHome"
@@ -23,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="191dp"
             android:layout_gravity="top"
-            android:src="@drawable/airplane"
+            android:src="@drawable/airport1"
             android:layout_marginVertical="20dp"/>
 
         <TextView
