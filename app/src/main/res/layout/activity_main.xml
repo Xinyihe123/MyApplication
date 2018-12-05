@@ -11,13 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top|center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/home">
 
         <TextView
             android:id="@+id/WelcomeTitle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:text="Welcome to Flight Finder!"
+            android:layout_marginTop="20dp"
             android:textSize="28dp" />
 
         <TextView
