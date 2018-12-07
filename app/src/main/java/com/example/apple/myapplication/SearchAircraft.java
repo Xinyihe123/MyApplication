@@ -23,6 +23,9 @@ public class SearchAircraft extends AppCompatActivity {
     //API key with ninghan2@illinoie.edu, 100 calls initially. (tested)
     private String APIKey = "36b1a4-a52bb5";
 
+    //Second key with ivan.nzhong@gmail.com
+    private String APIKey1 = "ba85c3-d60fd9";
+
     /** Default logging tag for messages from the main activity. */
     private static final String TAG = "Lab12:Main";
 

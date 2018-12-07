@@ -19,16 +19,16 @@
             android:id="@+id/returnHome"
             android:layout_width="wrap_content"
             android:layout_height="33dp"
-            android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
-            android:text="Back"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_button"
-            android:bottomRightRadius="20dp" />
+            android:bottomRightRadius="20dp"
+            android:text="Back" />
 
         <TextView
             android:id="@+id/flightDepartInfo"
             android:layout_width="match_parent"
-            android:layout_height="455dp"
+            android:layout_height="280dp"
             android:layout_marginTop="10dp"
             android:text="Display departure/arrival Info" />
 
@@ -36,20 +36,65 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:text="Enter Your Flight Number"
             android:layout_gravity="center_horizontal"
-            android:textSize="20dp"
-            android:textColor="#000000"/>
+            android:text="Enter Your Flight Information"
+            android:textColor="#000000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/flightCarrierInput"
+            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Flight Carrier (e.x. AA)"
+            android:inputType="textPersonName"
+            android:textColor="#f0ffff"
+            android:textColorHint="#8b8989"/>
 
         <EditText
             android:id="@+id/flightNumberInput"
-            android:layout_width="match_parent"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:ems="10"
-            android:hint="Flight Number (e.x. CA213)"
-            android:textColorHint="#8b8989"
+            android:hint="Flight Number (e.x. 2211)"
             android:inputType="textPersonName"
-            android:textColor="#f0ffff"/>
+            android:textColor="#f0ffff"
+            android:textColorHint="#8b8989" />
+
+        <EditText
+            android:id="@+id/yearInput"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Year (e.x. 2018)"
+            android:inputType="textPersonName"
+            android:textColor="#f0ffff"
+            android:textColorHint="#8b8989"/>
+
+        <EditText
+            android:id="@+id/monthInput"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Month (e.x. 12)"
+            android:inputType="textPersonName"
+            android:textColor="#f0ffff"
+            android:textColorHint="#8b8989"/>
+
+        <EditText
+            android:id="@+id/dayInput"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Day (e.x. 8)"
+            android:inputType="textPersonName"
+            android:textColor="#f0ffff"
+            android:textColorHint="#8b8989"/>
 
         <Button
             android:id="@+id/submitButton"

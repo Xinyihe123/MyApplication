@@ -23,12 +23,32 @@ public class SearchGeography extends AppCompatActivity {
     //API key with ninghan2@illinoie.edu, 100 calls initially. (tested)
     private String APIKey = "36b1a4-a52bb5";
 
+    //Second key with ivan.nzhong@gmail.com
+    private String APIKey1 = "ba85c3-d60fd9";
+
     /** Default logging tag for messages from the main activity. */
     private static final String TAG = "Lab12:Main";
 
+    String flightCarrier;
+
     String flightNumber;
 
+    String year;
+
+    String month;
+
+    String day;
+
+    //user input for flight information
+    EditText flightCarrierInput;
+
     EditText flightNumberInput;
+
+    EditText yearInput;
+
+    EditText monthInput;
+
+    EditText dayInput;
 
     Button submitButton;
 
@@ -45,8 +65,17 @@ public class SearchGeography extends AppCompatActivity {
         // Load the main layout for our activity
         setContentView(R.layout.activity_search_geography);
 
-        //set user input to flightNumberInput variable
+        //set user input to flight input variables
+
+        flightCarrierInput = findViewById(R.id.flightCarrierInput);
+
         flightNumberInput = findViewById(R.id.flightNumberInput);
+
+        yearInput = findViewById(R.id.yearInput);
+
+        monthInput = findViewById(R.id.monthInput);
+
+        dayInput = findViewById(R.id.dayInput);
 
         //set submit button
         submitButton = findViewById(R.id.submitButton);
@@ -58,7 +87,11 @@ public class SearchGeography extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                flightCarrier = flightCarrierInput.getText().toString();
                 flightNumber = flightNumberInput.getText().toString();
+                year = yearInput.getText().toString();
+                month = monthInput.getText().toString();
+                day = dayInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
                 //JSONObject arrival = null;
                 startAPICall(geographyInfo);
@@ -81,8 +114,14 @@ public class SearchGeography extends AppCompatActivity {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
                     //"https://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
-                    //"https://universities.hipolabs.com/search?name=" + flightNumber
-                    "https://aviation-edge.com/v2/public/flights?key=36b1a4-a52bb5&flightIata=" + flightNumber,
+                    //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/2211/arr/2018/12/8?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
+                    //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/2211/dep/2018/12/8?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
+                    //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"
+                    //                            + flightCarrier + "/" + flightNumber + "/dep/" + year
+                    //                            + "/" + month + "/" + day + "?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
+                    "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"
+                            + flightCarrier + "/" + flightNumber + "/dep/" + year
+                            + "/" + month + "/" + day + "?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false",
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
