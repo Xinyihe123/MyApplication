@@ -144,9 +144,33 @@ public class SearchMenu extends AppCompatActivity {
             JSONObject appendix = response.getJSONObject("appendix");
             JSONArray airports = appendix.getJSONArray("airports");
             JSONObject departureInfo = airports.getJSONObject(0);
+
+            //set departure airport full name
             String departureAirport = departureInfo.getString("name");
             final TextView flightDepartInfo = findViewById(R.id.flightDepartInfo);
             flightDepartInfo.setText(departureAirport);
+
+            //set departure airport code
+            String departureAirportC = departureInfo.getString("iata");
+            final TextView departureAirportCode = findViewById(R.id.departAirportCode);
+            departureAirportCode.setText(departureAirportC);
+
+            //get Departure and Arrival Time
+            JSONArray flightStatuses = response.getJSONArray("flightStatuses");
+            JSONObject depArrTime = flightStatuses.getJSONObject(0);
+
+            //set estimated departure time
+            JSONObject departureDate = depArrTime.getJSONObject("departureDate");
+            String dateLocal = departureDate.getString("dateLocal");
+            String[] departString = dateLocal.split("T");
+            String departTime = departString[1];
+            departTime = departTime.substring(0,5);
+            final TextView departureTime = findViewById(R.id.departTime);
+            departureTime.setText(departTime);
+
+            //get arrival airport information
+            JSONObject arrivalInfo = airports.getJSONObject(1);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
