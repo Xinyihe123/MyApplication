@@ -15,19 +15,34 @@
         android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/returnHome"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="33dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/rounded_button"
-            android:bottomRightRadius="20dp"
-            android:text="Back" />
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/returnHome"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/rounded_button"
+                android:bottomRightRadius="20dp"
+                android:text="Back" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:text="   Departure and Arrival"
+                android:textSize="25dp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -38,35 +53,48 @@
 
                 <TextView
                     android:id="@+id/departAirportInstruction"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Departure Airport" />
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="25dp"
+                    android:textColor="#000000"
+                    android:text="From" />
 
                 <TextView
                     android:id="@+id/flightDepartInfo"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:text="Display departure Info" />
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:text="display full name" />
 
                 <TextView
                     android:id="@+id/departAirportCode"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Display airport code" />
+                    android:layout_gravity="center_horizontal"
+                    android:text="display depart airport code" />
 
                 <TextView
                     android:id="@+id/departTimeInstruction"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
                     android:text="Departure Time (Estimated)"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
                     tools:text="" />
 
                 <TextView
                     android:id="@+id/departTime"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
                     tools:text="Display Departure Time" />
 
             </LinearLayout>
@@ -79,35 +107,47 @@
 
                 <TextView
                     android:id="@+id/arriveAirportInstruction"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="Arrival Airport" />
+                    android:textSize="25dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#000000"
+                    android:text="To" />
 
                 <TextView
                     android:id="@+id/arrivalInfo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="TextView" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20dp"
+                    android:text="display arrival full name" />
 
                 <TextView
                     android:id="@+id/arriveAirportCode"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/arriveTimeInstruction"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="25dp"
                     android:text="Arrival Time (Estimated)"
+                    android:textColor="#000000"
+                    android:textSize="15dp"
                     tools:text="" />
 
                 <TextView
                     android:id="@+id/arriveTime"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20dp"
                     android:text="Display Arrival Time"
                     tools:text="" />
 
