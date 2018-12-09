@@ -15,20 +15,35 @@
         android:orientation="vertical">
 
 
-        <Button
-            android:id="@+id/returnHome"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="33dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"
-            android:text="Back"
-            android:background="@drawable/rounded_button"
-            android:bottomRightRadius="20dp" />
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/returnHome"
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/rounded_button"
+                android:bottomRightRadius="20dp"
+                android:text="Back" />
+
+            <TextView
+                android:id="@+id/geographyIntro"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="    Airport Geography"
+                android:textSize="25dp"
+                android:layout_gravity="center_horizontal"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="280dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
 
             <LinearLayout
                 android:id="@+id/departGeoL"
@@ -38,46 +53,59 @@
 
                 <TextView
                     android:id="@+id/departAirportGeoIntro"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Departure Airport" />
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="23dp"
+                    android:text="Departure Airport"
+                    android:textColor="#000000"/>
 
                 <TextView
                     android:id="@+id/departAirportName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="17dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/departCountry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="Display Geography Info" />
 
                 <TextView
                     android:id="@+id/departCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/departLatitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/departLongitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/departElevation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
             </LinearLayout>
@@ -91,44 +119,59 @@
 
                 <TextView
                     android:id="@+id/arriveAirportGeoInfo"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="23dp"
+                    android:text="Arrival Airport"
+                    android:textColor="#000000"/>
 
                 <TextView
                     android:id="@+id/arriveAirportName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="17dp"
+                    android:text="display Airport Name" />
 
                 <TextView
                     android:id="@+id/arriveCountry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/arriveCity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/arriveLatitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/arriveLongitude"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
 
                 <TextView
                     android:id="@+id/arriveElevation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15dp"
                     android:text="TextView" />
             </LinearLayout>
         </LinearLayout>
@@ -137,7 +180,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
             android:text="Enter Your Flight Information"
             android:textColor="#000000"
