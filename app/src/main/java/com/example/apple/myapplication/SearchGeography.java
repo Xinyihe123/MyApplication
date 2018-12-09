@@ -80,9 +80,6 @@ public class SearchGeography extends AppCompatActivity {
         //set submit button
         submitButton = findViewById(R.id.submitButton);
 
-        //Set the text view of flight departure information
-        final TextView geographyInfo = findViewById(R.id.geographyInfo);
-
         //set input to flight number variable by using a listener
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,26 +91,23 @@ public class SearchGeography extends AppCompatActivity {
                 day = dayInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
                 //JSONObject arrival = null;
-                startAPICall(geographyInfo);
+                startAPICall();
             }
         });
 
-        //Configure the return home button -- Not Working yet!!!
+        //Configure the return home button
         configurereturnHome();
-
     }
-
 
 
     /**
      * Make an API call.
      */
-    void startAPICall(final TextView geographyInfo) {
+    void startAPICall() {
         try {
             //final String ret;
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
-                    //"https://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
                     //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/2211/arr/2018/12/8?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
                     //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/2211/dep/2018/12/8?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
                     //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"
@@ -127,17 +121,7 @@ public class SearchGeography extends AppCompatActivity {
                         @Override
                         public void onResponse(final JSONObject response) {
                             Log.d(TAG, response.toString());
-                            try {
-                                JSONArray arr = new JSONArray(response);
-                                //get departure info -- icaoCode
-                                JSONObject departure = arr.getJSONObject(2);
-                                String icaoCode = departure.getString("icaoCode");
-                                geographyInfo.setText(icaoCode);
-
-                            } catch (Exception e) {
-                                Log.e("MYAPP", "unexpected JSON exception", e);
-                            }
-
+                            getGeography(response);
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -152,6 +136,85 @@ public class SearchGeography extends AppCompatActivity {
 
     }
 
+    public void getGeography(final JSONObject response) {
+        try {
+            JSONObject appendix = response.getJSONObject("appendix");
+            JSONArray airports = appendix.getJSONArray("airports");
+            JSONObject departureInfo = airports.getJSONObject(0);
+
+            //set departure airport full name
+            String departureAirport = departureInfo.getString("name");
+            final TextView departAirportName = findViewById(R.id.departAirportName);
+            departAirportName.setText(departureAirport);
+
+            //set departure airport country
+            String departCountryName = "Country: " + departureInfo.getString("countryName");
+            final TextView departCountry = findViewById(R.id.departCountry);
+            departCountry.setText(departCountryName);
+
+            //set departure airport city
+            String departCityName = "City: " + departureInfo.getString("city");
+            final TextView departCity = findViewById(R.id.departCity);
+            departCity.setText(departCityName);
+
+            //set departure airport latitude
+            double departLatitude = departureInfo.getDouble("latitude");
+            String departureLatitude = "Latitude: " + String.valueOf(departLatitude);
+            final TextView deLatitude = findViewById(R.id.departLatitude);
+            deLatitude.setText(departureLatitude);
+
+            //set departure airport longitude
+            double departLongitude = departureInfo.getDouble("longitude");
+            String departureLongitude = "Longitude: " + String.valueOf(departLongitude);
+            final TextView deLongitude = findViewById(R.id.departLongitude);
+            deLongitude.setText(departureLongitude);
+
+            //set departure airport elevation
+            double departElevation = departureInfo.getDouble("elevationFeet");
+            String departureElevation = "Airport Elevation(In Feet): " + String.valueOf(departElevation);
+            final TextView deElevation = findViewById(R.id.departElevation);
+            deElevation.setText(departureElevation);
+
+
+            JSONObject arrivalInfo = airports.getJSONObject(1);
+
+            //set arrival airport full name
+            String arrivalAirport = arrivalInfo.getString("name");
+            final TextView arriveName = findViewById(R.id.arriveAirportName);
+            arriveName.setText(arrivalAirport);
+
+            //set arrival airport country
+            String arriveCountryName = "Country: " + arrivalInfo.getString("countryName");
+            final TextView arriveCountry = findViewById(R.id.arriveCountry);
+            arriveCountry.setText(arriveCountryName);
+
+            //set arrival airport city
+            String arriveCityName = "City: " + arrivalInfo.getString("city");
+            final TextView arriveCity = findViewById(R.id.arriveCity);
+            arriveCity.setText(arriveCityName);
+
+            //set arrival airport latitude
+            double arriveLatitude = arrivalInfo.getDouble("latitude");
+            String arrivalLatitude = "Latitude: " + String.valueOf(arriveLatitude);
+            final TextView arrLatitude = findViewById(R.id.arriveLatitude);
+            arrLatitude.setText(arrivalLatitude);
+
+            //set arrival airport longitude
+            double arriveLongitude = arrivalInfo.getDouble("longitude");
+            String arrivalLongitude = "Longitude: " + String.valueOf(arriveLongitude);
+            final TextView arrLongitude = findViewById(R.id.arriveLongitude);
+            arrLongitude.setText(arrivalLongitude);
+
+            //set arrival airport elevation
+            double arriveElevation = arrivalInfo.getDouble("elevationFeet");
+            String arrivalElevation = "Airport Elevation(In Feet): " + String.valueOf(arriveElevation);
+            final TextView arrElevation = findViewById(R.id.arriveElevation);
+            arrElevation.setText(arrivalElevation);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private void configurereturnHome() {
         Button returnHome = findViewById(R.id.returnHome);

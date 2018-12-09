@@ -83,9 +83,6 @@ public class SearchMenu extends AppCompatActivity {
         //set submit button
         submitButton = findViewById(R.id.submitButton);
 
-        //Set the text view of flight departure information
-        final TextView flightDepartInfo = findViewById(R.id.flightDepartInfo);
-
         //set input to flight number variable by using a listener
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +94,6 @@ public class SearchMenu extends AppCompatActivity {
                 day = dayInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
                 startAPICall();
-                //flightDepartInfo.setText("asdsadfasfdasef");
             }
         });
         //Configure the return home button
