@@ -94,7 +94,7 @@ public class SearchAircraft extends AppCompatActivity {
                 day = dayInput.getText().toString();
                 Log.d(TAG, "Submit button clicked");
                 //JSONObject arrival = null;
-                startAPICall(aircraftInfo);
+                startAPICall();
             }
         });
 
@@ -108,12 +108,11 @@ public class SearchAircraft extends AppCompatActivity {
     /**
      * Make an API call.
      */
-    void startAPICall(final TextView aircraftInfo) {
+    void startAPICall() {
         try {
             //final String ret;
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
-                    //"https://aviation-edge.com/v2/public/flights?key=[36b1a4-a52bb5]&flightIata=" + flightNumber
                     //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/2211/arr/2018/12/8?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
                     //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/AA/2211/dep/2018/12/8?appId=600c5e62&appKey=7b8ea8d4e5ccda50a5f3991e11e58f47&utc=false"
                     //"https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/status/"
@@ -127,17 +126,7 @@ public class SearchAircraft extends AppCompatActivity {
                         @Override
                         public void onResponse(final JSONObject response) {
                             Log.d(TAG, response.toString());
-                            try {
-                                JSONArray arr = new JSONArray(response);
-                                //get departure info -- icaoCode
-                                JSONObject departure = arr.getJSONObject(2);
-                                String icaoCode = departure.getString("icaoCode");
-                                aircraftInfo.setText(icaoCode);
-
-                            } catch (Exception e) {
-                                Log.e("MYAPP", "unexpected JSON exception", e);
-                            }
-
+                            getAircraftInfo(response);
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -150,6 +139,16 @@ public class SearchAircraft extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void getAircraftInfo(final JSONObject response) {
+        try {
+            JSONObject appendix = response.getJSONObject("appendix");
+            JSONArray equipments = appendix.getJSONArray("equipments");
+            JSONObject equipentInfo = equipments.getJSONObject(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
