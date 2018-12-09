@@ -35,8 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:text="   Departure and Arrival"
-                android:textSize="25dp"/>
+                android:typeface="monospace"
+                android:text=" Departure and Arrival"
+                android:textSize="21dp"/>
         </LinearLayout>
 
         <LinearLayout
