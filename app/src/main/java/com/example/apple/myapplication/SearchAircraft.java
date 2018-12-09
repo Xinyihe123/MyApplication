@@ -80,9 +80,6 @@ public class SearchAircraft extends AppCompatActivity {
         //set submit button
         submitButton = findViewById(R.id.submitButton);
 
-        //Set the text view of flight departure information
-        final TextView aircraftInfo = findViewById(R.id.aircraftInfo);
-
         //set input to flight number variable by using a listener
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,6 +143,40 @@ public class SearchAircraft extends AppCompatActivity {
             JSONObject appendix = response.getJSONObject("appendix");
             JSONArray equipments = appendix.getJSONArray("equipments");
             JSONObject equipentInfo = equipments.getJSONObject(0);
+
+            //set name
+            String planeName = equipentInfo.getString("name");
+            final TextView planeN = findViewById(R.id.name);
+            planeN.setText(planeName);
+
+            //set turboProp
+            String turboProp = equipentInfo.getString("turboProp");
+            final TextView turboP = findViewById(R.id.turbo);
+            turboP.setText(turboProp);
+
+            //set jet
+            String jet = equipentInfo.getString("jet");
+            final TextView jetInfo = findViewById(R.id.jet);
+            jetInfo.setText(jet);
+
+            //set widebody
+            String widebody = equipentInfo.getString("widebody");
+            final TextView wideBody = findViewById(R.id.widebody);
+            wideBody.setText(widebody);
+
+            //set regional
+            String regional = equipentInfo.getString("regional");
+            final TextView regionalInfo = findViewById(R.id.reigonal);
+            regionalInfo.setText(regional);
+
+            //set tail number
+            JSONArray flightStatue = response.getJSONArray("flightStatuses");
+            JSONObject flightStatuses = flightStatue.getJSONObject(0);
+            JSONObject flightEquipment = flightStatuses.getJSONObject("flightEquipment");
+            String tailNumber = flightEquipment.getString("tailNumber");
+            final TextView tailN = findViewById(R.id.tailNumber);
+            tailN.setText(tailNumber);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
