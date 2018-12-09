@@ -171,6 +171,26 @@ public class SearchMenu extends AppCompatActivity {
             //get arrival airport information
             JSONObject arrivalInfo = airports.getJSONObject(1);
 
+            //set arrival airport full name
+            String arrivalAirport = arrivalInfo.getString("name");
+            final TextView flightArrivalInfo = findViewById(R.id.arrivalInfo);
+            flightArrivalInfo.setText(arrivalAirport);
+
+            //set arrival airport code
+            String arrivalAirportC = arrivalInfo.getString("iata");
+            final TextView arrivalAirportCode = findViewById(R.id.arriveAirportCode);
+            arrivalAirportCode.setText(arrivalAirportC);
+
+            //set estimated arrival time
+            JSONObject arrivalDate = depArrTime.getJSONObject("arrivalDate");
+            String dateLocalA = arrivalDate.getString("dateLocal");
+            String[] arrivalString = dateLocalA.split("T");
+            String arrivalTime = arrivalString[1];
+            arrivalTime = arrivalTime.substring(0,5);
+            final TextView arriveTime = findViewById(R.id.arriveTime);
+            arriveTime.setText(arrivalTime);
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
