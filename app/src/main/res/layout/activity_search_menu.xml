@@ -67,14 +67,14 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center_horizontal"
                     android:textSize="20dp"
-                    android:text="display full name" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/departAirportCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="display depart airport code" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/departTimeInstruction"
@@ -91,11 +91,11 @@
                     android:id="@+id/departTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text=""
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     android:textSize="20dp"
-                    tools:text="Display Departure Time" />
+                    tools:text="" />
 
             </LinearLayout>
 
@@ -121,14 +121,14 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center_horizontal"
                     android:textSize="20dp"
-                    android:text="display arrival full name" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/arriveAirportCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="TextView" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/arriveTimeInstruction"
@@ -148,7 +148,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"
                     android:textSize="20dp"
-                    android:text="Display Arrival Time"
+                    android:text=""
                     tools:text="" />
 
             </LinearLayout>
