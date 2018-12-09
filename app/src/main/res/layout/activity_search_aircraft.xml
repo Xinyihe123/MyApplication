@@ -25,11 +25,35 @@
             android:text="Back" />
 
         <TextView
-            android:id="@+id/aircraftInfo"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="280dp"
             android:layout_marginTop="10dp"
             android:text="aircraft Info" />
+
+        <TextView
+            android:id="@+id/turbo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/jet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/widebody"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/reigonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
 
         <TextView
             android:id="@+id/textView"
@@ -100,6 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Submit" />
+
     </LinearLayout>
 
 </LinearLayout>
