@@ -24,41 +24,98 @@
             android:bottomRightRadius="20dp"
             android:text="Back" />
 
-        <TextView
-            android:id="@+id/name"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=" name :" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/turbo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            <LinearLayout
+                android:id="@+id/nameOfInfo"
+                android:layout_width="193dp"
+                android:layout_height="260dp"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/jet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+                <TextView
+                    android:id="@+id/N"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Equipment Name :" />
 
-        <TextView
-            android:id="@+id/widebody"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+                <TextView
+                    android:id="@+id/T"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="TurboProp :" />
 
-        <TextView
-            android:id="@+id/reigonal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+                <TextView
+                    android:id="@+id/J"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Jet :" />
 
-        <TextView
-            android:id="@+id/tailNumber"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="tailNumber : " />
+                <TextView
+                    android:id="@+id/W"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Wide Body : " />
+
+                <TextView
+                    android:id="@+id/R"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Regional : " />
+
+                <TextView
+                    android:id="@+id/Tail"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Tail Number :" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/responseInfo"
+                android:layout_width="193dp"
+                android:layout_height="260dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text=" name :" />
+
+                <TextView
+                    android:id="@+id/turbo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/jet"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/widebody"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/reigonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/tailNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="tailNumber : " />
+            </LinearLayout>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView"
